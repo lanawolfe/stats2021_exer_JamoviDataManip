@@ -16,6 +16,12 @@ Complete each step of the assignment below.
 # keep a list of the packages used in this script
 packages <- c("tidyverse","rio","jmv")
 ```
+jmv::descriptives(
+    data = data,
+    vars = vars(frst3, frst2, frst1),
+    se = TRUE,
+    iqr = TRUE)
+    
 
 This next code block has eval=FALSE because you don't want to run it when knitting the file. Installing packages when knitting an R notebook can be problematic.
 
@@ -76,13 +82,27 @@ You can get the R code for most of the analyses you do in Jamovi.
     + You may need to change the name of the dataset to match the name of the data frame in RStudio. data = week3 (or the name of your data frame)
     
 ```{r}
-
+jmv::descriptives(
+    data = dataset,
+    vars = vars(frst3, frst2, frst1, sex, lvst1, research, lvst2, lvst3, lvst4),
+    bar = TRUE,
+    mean = FALSE,
+    median = FALSE,
+    sd = FALSE,
+    se = TRUE)
 
 ```
 
 2. Copy the code block for the descriptive statistics for the continuous variables and run it here in RStudio.
 
 ```{r}
+jmv::descriptives(
+    data = dataset,
+    vars = vars(height, weight),
+    hist = TRUE,
+    box = TRUE,
+    range = TRUE,
+    se = TRUE)
 
 
 ```
